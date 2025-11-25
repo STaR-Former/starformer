@@ -208,9 +208,9 @@ __marimo__/
 
 # custom
 .DS_Store
-data/ 
-lightning_logs/
-model_ckpts/
+#data/ 
+#lightning_logs/
+#model_ckpts/
 outputs/
 results/
 runs/
