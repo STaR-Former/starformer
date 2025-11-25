@@ -1,0 +1,7 @@
+training_method: centralized
+train_splits: [0.95, 0.05]
+batch_size: ${training.batch_size}
+num_workers: ${system.num_workers}
+seed: ${seed}
+val_batch_size: ${training.val_batch_size}
+test_batch_size: ${training.test_batch_size}

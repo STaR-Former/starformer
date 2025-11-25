@@ -1,0 +1,8 @@
+name: lstm
+input_size: 8 #10 for v1 / v0 7 / 9
+hidden_size: 16
+output_size: 1
+num_layers: 4
+dropout: 0.0
+batch_size: ${training.batch_size}
+device: ${system.accelerator}

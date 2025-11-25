@@ -1,0 +1,15 @@
+batch_size: ${training.batch_size}
+num_workers: ${system.num_workers}
+training_method: federated
+partition: shard
+balanced: True
+train_splits: [0.95, 0.05]
+num_clients: 100
+num_samples: 300
+num_shards: 200
+num_shards_per_client: 2
+min_shards_per_client: 1
+max_shards_per_client: 5
+seed: ${seed}
+val_batch_size: ${training.val_batch_size}
+test_batch_size: ${training.test_batch_size}

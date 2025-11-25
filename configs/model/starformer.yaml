@@ -1,0 +1,36 @@
+name: drm_transformer
+######## - - embedding - - ########
+embedding:
+  d_features: 8 #10 for v1 / v0 7 / 9
+  max_seq_len: 981 #487
+######## - - embedding - - ########
+######## - - transformer layers - - ########
+d_model: 16
+n_head: 2
+num_encoder_layers: 2
+dim_feedforward: 16
+dropout: 0.0
+activation: silu
+layer_norm_eps: 1e-05
+batch_first: False
+bias: true
+enable_nested_tensor: True
+mask_check: True
+masking: null
+mask_threshold: null # 0.2 (mask_p)
+mask_region_bound: null # 0.1
+ratio_highest_attention: null # 0.5
+aggregate_attn_per_batch: False
+activation_masking: silu
+activation_cls: silu
+return_attn: false
+######## - - transformer layers - - ########
+######## - - output head - - ########
+output_head:
+  d_out: 1
+  batch_size: ${training.batch_size}
+  reduced: False
+  per_element_in_sequence_pred: False
+  autoregressive_classification: False
+  ######## - - output head - - ######## old
+  reconstruction: False

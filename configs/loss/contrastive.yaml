@@ -1,0 +1,6 @@
+loss_fn: contrastive_loss
+temp: 0.5
+lambda_contrastive: .5
+lamdba_sim: 0.5
+#margin: 2.0
+

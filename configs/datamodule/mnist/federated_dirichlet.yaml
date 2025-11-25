@@ -1,0 +1,12 @@
+batch_size: ${training.batch_size}
+num_workers: ${system.num_workers}
+training_method: federated
+partition: dirichlet
+balanced: True
+train_splits: [0.95, 0.05]
+num_clients: 100
+dir_alpha: 0.001 # (0.0, 1.0]
+unbalanced_sigma: null # if false (0.0, 1.0]
+seed: ${seed}
+val_batch_size: ${training.val_batch_size}
+test_batch_size: ${training.test_batch_size}

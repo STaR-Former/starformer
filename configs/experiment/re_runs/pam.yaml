@@ -1,0 +1,45 @@
+# @package _global_
+# pam
+dataset: pam
+
+defaults:
+  - override /callbacks/lr_scheduler: reduceLROnPlateau
+  - override /callbacks/early_stop: pam
+  - override /callbacks/model_ckpt: pam
+  - override /datamodule: pam/centralized
+  - override /logger: wandb
+  - override /loss: ce
+  - override /model: starformer
+  - override /optimizer: adam
+  - override /training: pam/centralized
+
+run_url: "<entity>/STaRFormer/runs/fnfq0wy3"
+change_config: {
+  "logger": {
+    "sweep": false, 
+    "project": "pam"
+  }, 
+  "datamodule": {
+    "train_split_index": 0,
+    "aws_profile" : null,
+    "s3_bucket_path" : null,
+    "instance" : null
+  },
+  # "model": {
+  #   #"mask_threshold": 0.5, # 0,207764602436646
+  #   "mask_region_bound": 0.3, # 0.1
+  #   #"ratio_highest_attention": 0.5 # 0.3
+  #   "output_head": {
+  #     "d_out": 8, 
+  #     "batch_size": 128,
+  #     "reduced": false,
+  #     "per_element_in_sequence_pred": false, 
+  #     "autoregressive_classification": false,
+  #     "reconstruction": false
+  #   }
+  # },
+  #"loss": {
+    #"lamdba_sim": 1.0,
+  #  "lambda_contrastive": 0.1
+  #},
+}

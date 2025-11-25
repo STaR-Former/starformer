@@ -1,0 +1,3 @@
+accelerator: mps
+devices: 1
+num_workers: 0

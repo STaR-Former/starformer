@@ -1,0 +1,18 @@
+
+seed: 42
+dataset: mnist
+run: null
+
+defaults:
+  - _self_
+  - callbacks/early_stop: default
+  - callbacks/model_ckpt: default
+  - callbacks/lr_scheduler: default
+  - datamodule: mnist/centralized
+  - loss: ce
+  - optimizer: sgd
+  - model: lstm
+  - system: system
+  - training: mnist/centralized
+  - logger: tensorboard
+  
