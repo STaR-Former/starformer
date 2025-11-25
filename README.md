@@ -51,25 +51,23 @@ pip install -r requirements_cuda_py3.10.14.txt
 ```
 for GPU hardware.
 
-
-
-## 5. Training
+## 4. Training
 To reproduce the experiments in the paper, you can execute the following.
 The default logger is set to tensorbard, adjust to `config` files to use [Weights&Biases](https://wandb.ai/site/) for logging. 
-### 5.1. Classification
-#### 5.1.1. Geolife, P19, P12, PAM
+### 4.1. Classification
+#### 4.1.1. Geolife, P19, P12, PAM
 ```
 CUDA_VISIBLE_DEVICES=0 python scripts/training/train.py +experiment=benchmark/classification/<dataset>.yaml
 ```
-#### 5.1.2. Datasets from the UCR-UEA Repo
+#### 4.1.2. Datasets from the UCR-UEA Repo
 ```
 CUDA_VISIBLE_DEVICES=0 python scripts/training/train.py +experiment=benchmark/classification/ucr-uea/<dataset>.yaml
 ```
-### 5.2. Anomaly Detection
+### 4.2. Anomaly Detection
 ```
 CUDA_VISIBLE_DEVICES=0 python scripts/training/train.py +experiment=benchmark/anomaly/<dataset>.yaml
 ```
-### 5.3. Sweeps
+### 4.3. Sweeps
 You can also run new sweeps. However, this requires the use of [Weights&Biases](https://wandb.ai/site/) in the current setup.
 
 1. Setup sweeps
