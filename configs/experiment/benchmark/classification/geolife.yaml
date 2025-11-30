@@ -41,11 +41,11 @@ datamodule:
   - bus
   - car
   - walk
-  s3_bucket_path: data-phd
+  s3_bucket_path: null #data-phd
   val_batch_size: 64
   test_batch_size: 64
   training_method: centralized
-  dataset_instance: 2024-10-22_15:41:02
+  dataset_instance: null #2024-10-22_15:41:02
   train_test_split:
     val: 0.1
     test: 0.2
