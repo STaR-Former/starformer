@@ -70,6 +70,9 @@ class KPIDataset(BaseDataset):
             if not osp.exists(self.dataset_dir_paths['raw']):
                 os.makedirs(self.dataset_dir_paths['raw'])
             
+            if not osp.exists(osp.join(self.dataset_dir_paths['raw'], self._raw_files['processed'])):
+                raise RuntimeError(f"Processed pickle file does not exist ({osp.join(self.dataset_dir_paths['raw'], self._raw_files['processed'])}). Please download the raw data from http://test-10056879.file.myqcloud.com/10056879/test/20180524_78431960010324/KPI%E5%BC%82%E5%B8%B8%E6%A3%80%E6%B5%8B%E5%86%B3%E8%B5%9B%E6%95%B0%E6%8D%AE%E9%9B%86.zip and ensure it has been processed with ../data/KPI/kpi_preprocess.py.")
+            
             self._data_pkl = self.load_asset(
                 format='pickle', file_path=osp.join(self.dataset_dir_paths['raw'], self._raw_files['processed']),
                 read='rb'

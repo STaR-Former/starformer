@@ -70,6 +70,9 @@ class YahooDataset(BaseDataset):
             if not osp.exists(self.dataset_dir_paths['raw']):
                 os.makedirs(self.dataset_dir_paths['raw'])
             
+            if not osp.exists(osp.join(self.dataset_dir_paths['raw'], self._raw_files['processed'])):
+                raise RuntimeError(f"Processed pickle file does not exist ({osp.join(self.dataset_dir_paths['raw'], self._raw_files['processed'])}). Please download the raw data from https://webscope.sandbox.yahoo.com/catalog.php?datatype=s&did=70 and ensure it has been processed with ../data/yahoo/yahoo_preprocessing.py.")
+            
             self._data_pkl = self.load_asset(
                 format='pickle', file_path=osp.join(self.dataset_dir_paths['raw'], self._raw_files['processed']),
                 read='rb'
